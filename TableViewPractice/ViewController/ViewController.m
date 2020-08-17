@@ -11,14 +11,29 @@
 @interface ViewController ()
 
 @property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic, readonly) ViewModel *viewModel;
 
 @end
 
+typedef void(^complete)(NSString *);
+
 @implementation ViewController
+
+- (instancetype)initWithViewModel:(ViewModel *)viewModel {
+    self = [super init];
+    if (!self) return nil;
+    _viewModel = viewModel;
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupTableView];
+    [self fetch];
+}
+
+- (void)fetch {
+    [_viewModel fetch];
 }
 
 -(void)setupTableView {

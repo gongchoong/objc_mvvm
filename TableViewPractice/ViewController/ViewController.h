@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewModel.h"
 
 @interface ViewController : UIViewController
 
+- (instancetype) initWithViewModel: (ViewModel *)viewModel;
+-(void) fetch;
 
 @end
 

@@ -19,7 +19,15 @@
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     _window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController alloc]];
+    NSURL *url = [[NSURL alloc] initWithString:@"https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json"];
+    
+    ApiService *apiService = [[ApiService alloc] initWithUrl:url];
+    
+    ViewModel *viewModel = [[ViewModel alloc] initWithApiServie:apiService];
+    
+    ViewController *vc = [[ViewController alloc] initWithViewModel:viewModel];
+    
+    _window.rootViewController = [[UINavigationController alloc] initWithRootViewController: vc];
     [_window makeKeyAndVisible];
     _window.windowScene = windowScene;
 }

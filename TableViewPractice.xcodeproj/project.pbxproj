@@ -13,6 +13,8 @@
 		5A79E32A24EA89A10099CE9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A79E32924EA89A10099CE9B /* Assets.xcassets */; };
 		5A79E32D24EA89A10099CE9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A79E32B24EA89A10099CE9B /* LaunchScreen.storyboard */; };
 		5A79E33024EA89A10099CE9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79E32F24EA89A10099CE9B /* main.m */; };
+		5A79E33924EA93830099CE9B /* ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79E33824EA93830099CE9B /* ViewModel.m */; };
+		5A79E33D24EAAFA00099CE9B /* ApiService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79E33C24EAAFA00099CE9B /* ApiService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,10 @@
 		5A79E32C24EA89A10099CE9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A79E32E24EA89A10099CE9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A79E32F24EA89A10099CE9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5A79E33824EA93830099CE9B /* ViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewModel.m; sourceTree = "<group>"; };
+		5A79E33A24EA938C0099CE9B /* ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewModel.h; sourceTree = "<group>"; };
+		5A79E33B24EAAF910099CE9B /* ApiService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiService.h; sourceTree = "<group>"; };
+		5A79E33C24EAAFA00099CE9B /* ApiService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApiService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,18 +65,46 @@
 		5A79E31C24EA89A00099CE9B /* TableViewPractice */ = {
 			isa = PBXGroup;
 			children = (
+				5A79E34024EAB29F0099CE9B /* Api */,
+				5A79E33F24EAB2960099CE9B /* ViewModel */,
+				5A79E33E24EAB28A0099CE9B /* ViewController */,
 				5A79E31D24EA89A00099CE9B /* AppDelegate.h */,
 				5A79E31E24EA89A00099CE9B /* AppDelegate.m */,
 				5A79E32024EA89A00099CE9B /* SceneDelegate.h */,
 				5A79E32124EA89A00099CE9B /* SceneDelegate.m */,
-				5A79E32324EA89A00099CE9B /* ViewController.h */,
-				5A79E32424EA89A00099CE9B /* ViewController.m */,
 				5A79E32924EA89A10099CE9B /* Assets.xcassets */,
 				5A79E32B24EA89A10099CE9B /* LaunchScreen.storyboard */,
 				5A79E32E24EA89A10099CE9B /* Info.plist */,
 				5A79E32F24EA89A10099CE9B /* main.m */,
 			);
 			path = TableViewPractice;
+			sourceTree = "<group>";
+		};
+		5A79E33E24EAB28A0099CE9B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5A79E32324EA89A00099CE9B /* ViewController.h */,
+				5A79E32424EA89A00099CE9B /* ViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5A79E33F24EAB2960099CE9B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5A79E33A24EA938C0099CE9B /* ViewModel.h */,
+				5A79E33824EA93830099CE9B /* ViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5A79E34024EAB29F0099CE9B /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5A79E33B24EAAF910099CE9B /* ApiService.h */,
+				5A79E33C24EAAFA00099CE9B /* ApiService.m */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +176,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A79E33D24EAAFA00099CE9B /* ApiService.m in Sources */,
 				5A79E32524EA89A00099CE9B /* ViewController.m in Sources */,
 				5A79E31F24EA89A00099CE9B /* AppDelegate.m in Sources */,
+				5A79E33924EA93830099CE9B /* ViewModel.m in Sources */,
 				5A79E33024EA89A10099CE9B /* main.m in Sources */,
 				5A79E32224EA89A00099CE9B /* SceneDelegate.m in Sources */,
 			);
