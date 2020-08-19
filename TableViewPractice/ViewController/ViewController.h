@@ -11,7 +11,7 @@
 
 @interface ViewController : UIViewController
 
-- (instancetype) initWithViewModel: (ViewModel *)viewModel;
+-(instancetype) initWithViewModel: (ViewModel *)viewModel;
 -(void) fetch;
 
 @end

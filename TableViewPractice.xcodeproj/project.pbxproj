@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A22676924ECC55700CCB69D /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A22676824ECC55700CCB69D /* Album.m */; };
 		5A79E31F24EA89A00099CE9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79E31E24EA89A00099CE9B /* AppDelegate.m */; };
 		5A79E32224EA89A00099CE9B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79E32124EA89A00099CE9B /* SceneDelegate.m */; };
 		5A79E32524EA89A00099CE9B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79E32424EA89A00099CE9B /* ViewController.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A22676724ECC54700CCB69D /* Album.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		5A22676824ECC55700CCB69D /* Album.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 		5A79E31A24EA89A00099CE9B /* TableViewPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A79E31D24EA89A00099CE9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5A79E31E24EA89A00099CE9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -46,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A22676624ECC53800CCB69D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A22676724ECC54700CCB69D /* Album.h */,
+				5A22676824ECC55700CCB69D /* Album.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5A79E31124EA89A00099CE9B = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +77,7 @@
 		5A79E31C24EA89A00099CE9B /* TableViewPractice */ = {
 			isa = PBXGroup;
 			children = (
+				5A22676624ECC53800CCB69D /* Model */,
 				5A79E34024EAB29F0099CE9B /* Api */,
 				5A79E33F24EAB2960099CE9B /* ViewModel */,
 				5A79E33E24EAB28A0099CE9B /* ViewController */,
@@ -181,6 +194,7 @@
 				5A79E31F24EA89A00099CE9B /* AppDelegate.m in Sources */,
 				5A79E33924EA93830099CE9B /* ViewModel.m in Sources */,
 				5A79E33024EA89A10099CE9B /* main.m in Sources */,
+				5A22676924ECC55700CCB69D /* Album.m in Sources */,
 				5A79E32224EA89A00099CE9B /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

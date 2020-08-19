@@ -19,7 +19,7 @@
 }
 
 - (void)fetch {
-    [_apiService fetchAlbumData:^(NSMutableArray *result) {
+    [_apiService fetchAlbumData:^{
         
     }];
 }

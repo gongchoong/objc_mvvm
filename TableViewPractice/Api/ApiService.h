@@ -14,6 +14,6 @@
 
 -(instancetype) initWithUrl: (NSURL *)url;
 
-- (void) fetchAlbumData: (void (^)(NSMutableArray *result))completion;
+- (void) fetchAlbumData: (void (^)(void))completion;
 
 @end
