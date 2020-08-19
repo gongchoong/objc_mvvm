@@ -19,7 +19,7 @@
     return self;
 }
 
-- (void)fetchAlbumData:(void (^)(void))completion {
+- (void)fetchAlbumData:(void (^)(NSMutableArray *))completion {
     [[NSURLSession.sharedSession dataTaskWithURL:_url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSError *err;
         
@@ -33,6 +33,7 @@
         
         NSDictionary *feed = [parsedObject valueForKey:@"feed"];
         NSArray *results = [feed valueForKey:@"results"];
+        NSMutableArray *albumArray = [[NSMutableArray alloc]init];
         
         for (NSDictionary *result in results){
             NSString *artistName = [result valueForKey:@"artistName"];
@@ -40,13 +41,14 @@
             Album *album = [Album new];
             album.artistName = artistName;
             album.idNumber = idNumber;
-            NSLog(@"name: %@", album.artistName);
-            NSLog(@"id: %@", album.idNumber);
+            
+            [albumArray addObject:album];
+            
         }
         
+        completion(albumArray);
         
     }] resume];
-    completion();
 }
 
 @end

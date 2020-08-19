@@ -11,6 +11,8 @@
 
 @implementation ViewModel
 
+
+
 - (instancetype)initWithApiServie:(ApiService *)apiService {
     self = [super init];
     if (!self) return nil;
@@ -19,9 +21,15 @@
 }
 
 - (void)fetch {
-    [_apiService fetchAlbumData:^{
-        
+    __weak typeof(self) weakSelf = self;
+    [_apiService fetchAlbumData:^(NSMutableArray *albumArray) {
+        weakSelf.albums = albumArray;
+        weakSelf.updateTableViewBlock();
     }];
+}
+
+- (Album *)getAlbum:(NSIndexPath *)indexPath {
+    return self.albums[indexPath.row];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Album.h"
 
 @interface ViewController ()
 
@@ -33,6 +34,10 @@ typedef void(^complete)(NSString *);
 }
 
 - (void)fetch {
+    __weak typeof(self) weakSelf = self;
+    _viewModel.updateTableViewBlock = ^{
+        [weakSelf refreshTableView];
+    };
     [_viewModel fetch];
 }
 
@@ -52,13 +57,20 @@ typedef void(^complete)(NSString *);
     ]];
 }
 
+-(void)refreshTableView {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return _viewModel.albums.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellId" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+    Album *album = [_viewModel getAlbum:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", album.artistName];
     return cell;
     
 }
